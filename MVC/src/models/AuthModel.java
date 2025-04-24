@@ -10,4 +10,12 @@ public class AuthModel {
             return false;
         }
     }
+    public void registro(String usuario, String biografia, String preferencias, String colonia, boolean aceptoTerminos) {
+        System.out.println("Registro de usuario:");
+        System.out.println("Usuario: " + usuario);
+        System.out.println("Biografía: " + biografia);
+        System.out.println("Preferencias: " + preferencias);
+        System.out.println("Colonia: " + colonia);
+        System.out.println("Aceptó términos: " + aceptoTerminos);
+    }
 }

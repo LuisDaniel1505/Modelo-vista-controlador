@@ -18,6 +18,6 @@ public AuthView view;
  	}
  	public void register() {
  		
- 		//view.register();
+ 		view.register();
  	}
 }
