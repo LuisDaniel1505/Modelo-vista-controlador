@@ -182,6 +182,9 @@ public class AuthView {
 	                AuthModel auth = new AuthModel(); 
 	                if (auth.access(correo, passText)) {
 	                    JOptionPane.showMessageDialog(null, "Bienvenido", "Inicio de sesión", JOptionPane.INFORMATION_MESSAGE);
+	                    frame.setSize(380,600);
+	    				home();
+	                    
 	                } else {
 	                    JOptionPane.showMessageDialog(null, "Correo o contraseña incorrectos.", "Error", JOptionPane.ERROR_MESSAGE);
 	                }
@@ -370,6 +373,26 @@ public class AuthView {
 			}
 		});
 
+		panelPrincipal.repaint();
+		panelPrincipal.revalidate();
+	}
+	public void home() {
+		panelPrincipal.removeAll();
+		panelPrincipal.setLocation(0, 0);
+		panelPrincipal.setOpaque(true);
+		panelPrincipal.setSize(400, 600);
+		panelPrincipal.setBackground(new Color(235, 235, 235));
+		panelPrincipal.setLayout(null);
+		
+		JLabel etiqueta1 = new JLabel("Home");
+		etiqueta1.setSize(245, 30);
+		etiqueta1.setLocation(70, 20);
+		etiqueta1.setBackground(new Color(235, 235, 235));
+		etiqueta1.setOpaque(true);
+		etiqueta1.setHorizontalAlignment(JLabel.CENTER);
+		etiqueta1.setFont(etiquetas);
+		panelPrincipal.add(etiqueta1);
+		
 		panelPrincipal.repaint();
 		panelPrincipal.revalidate();
 	}

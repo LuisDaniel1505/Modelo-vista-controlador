@@ -8,9 +8,7 @@ public AuthView view;
  		
  		view = new AuthView();
  	}
- 	
- 	
- 	
+ 
  	public void login(){
  		
  		view.login();
