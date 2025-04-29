@@ -2,12 +2,14 @@ package models;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 
 public class AuthModel {
 
+	String url = AuthModel.class.getResource("/Files/user.txt").getPath();
     public boolean access(String usuario, String contrasena) {
         try {
-            String url = AuthModel.class.getResource("/Files/user.txt").getPath();
             BufferedReader lector = new BufferedReader(new FileReader(url));
             String linea;
 
@@ -32,12 +34,21 @@ public class AuthModel {
 
         return false;
     }
-    public void registro(String usuario, String biografia, String preferencias, String colonia, boolean aceptoTerminos) {
-        System.out.println("Registro de usuario:");
-        System.out.println("Usuario: " + usuario);
-        System.out.println("Biografía: " + biografia);
-        System.out.println("Preferencias: " + preferencias);
-        System.out.println("Colonia: " + colonia);
-        System.out.println("Aceptó términos: " + aceptoTerminos);
+    
+    public boolean registro(String nombres,String apellidos,String empresa,String ambito,String cargo,String usuario,String email,String password){
+        FileWriter archivo=null;
+        PrintWriter escritor=null;
+        try{
+            archivo=new FileWriter("src/Files/registro.txt",true);
+            escritor=new PrintWriter(archivo);
+            String linea = String.join("|",nombres,apellidos,empresa,ambito,cargo,usuario,email,password);
+            escritor.println(linea);
+            escritor.close();archivo.close();
+            return true;
+        }catch(Exception e){
+        	e.printStackTrace();
+            System.out.println("No se encontró el archivo.");
+        }
+        return false;
     }
 }

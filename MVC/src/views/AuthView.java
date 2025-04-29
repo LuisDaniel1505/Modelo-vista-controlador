@@ -195,186 +195,267 @@ public class AuthView {
 	    panelPrincipal.revalidate();
 	}
 	public void register() {
-		panelPrincipal.removeAll();
-		panelPrincipal.setLocation(0, 0);
-		panelPrincipal.setOpaque(true);
-		panelPrincipal.setSize(400, 600);
-		panelPrincipal.setBackground(new Color(235, 235, 235));
-		panelPrincipal.setLayout(null);
-		
-		JLabel etiqueta1 = new JLabel("Registro");
-		etiqueta1.setSize(245, 30);
-		etiqueta1.setLocation(70, 20);
-		etiqueta1.setBackground(new Color(235, 235, 235));
-		etiqueta1.setOpaque(true);
-		etiqueta1.setHorizontalAlignment(JLabel.CENTER);
-		etiqueta1.setFont(etiquetas);
-		panelPrincipal.add(etiqueta1);
-		
-		JLabel etiqueta2 = new JLabel("Nombre de usuario");
-		etiqueta2.setBounds(95, 60, 180, 30);
-		etiqueta2.setFont(etiquetas);
-		etiqueta2.setHorizontalAlignment(JLabel.CENTER);
-		panelPrincipal.add(etiqueta2);
-		
-		JTextField email = new JTextField();
-		email.setBounds(15, 90, 370, 30);
-		email.setBackground(new Color(255, 255, 255));
-		email.setOpaque(true);
-		email.setFont(etiquetas);
-		panelPrincipal.add(email);
-		panelPrincipal.revalidate();
-		
-		JLabel etiqueta3 = new JLabel("Cuentanos sobre ti");
-		etiqueta3.setBounds(95, 120, 180, 30);
-		etiqueta3.setFont(etiquetas);
-		etiqueta3.setHorizontalAlignment(JLabel.CENTER);
-		panelPrincipal.add(etiqueta3);
-		
-		JTextArea biografia = new JTextArea();
-		biografia.setBounds(15, 150, 370, 70);
-		biografia.setBackground(new Color(255, 255, 255));
-		biografia.setOpaque(true);
-		biografia.setFont(etiquetas);
-		biografia.setBorder(BorderFactory.createLineBorder(Color.black));
-		panelPrincipal.add(biografia);
-		panelPrincipal.revalidate();
-		
-		JLabel etiqueta4 = new JLabel("Preferencias");
-		etiqueta4.setBounds(95, 225, 180, 30);
-		etiqueta4.setFont(etiquetas);
-		etiqueta4.setHorizontalAlignment(JLabel.CENTER);
-		panelPrincipal.add(etiqueta4);
-		
-		JCheckBox recordar = new JCheckBox("Dulce");
-		recordar.setBounds(18,255, 99,20);
-		recordar.setBackground(new Color(235, 235, 235));
-		recordar.setVisible(true);
-		panelPrincipal.add(recordar);
-		
-		JCheckBox salado = new JCheckBox("Salado");
-		salado.setBounds(150,255, 99,20);
-		salado.setBackground(new Color(235, 235, 235));
-		salado.setVisible(true);
-		panelPrincipal.add(salado);
-		
-		JCheckBox saludable = new JCheckBox("Saludable");
-		saludable.setBounds(300,255, 99,20);
-		saludable.setBackground(new Color(235, 235, 235));
-		saludable.setVisible(true);
-		panelPrincipal.add(saludable);
-		
-		JLabel etiqueta5 = new JLabel("Terminos");
-		etiqueta5.setBounds(95, 270, 180, 30);
-		etiqueta5.setFont(etiquetas);
-		etiqueta5.setHorizontalAlignment(JLabel.CENTER);
-		panelPrincipal.add(etiqueta5);
+	    panelPrincipal.removeAll();
+	    frame.setSize(650, 500);
+	    panelPrincipal.setSize(650, 500);
+	    panelPrincipal.setBackground(new Color(43, 39, 56));
+	    panelPrincipal.setLayout(null);
+	    
+	    JLabel etiqueta1 = new JLabel("Crear cuenta");
+	    etiqueta1.setBounds(250, 20, 150, 40);
+	    etiqueta1.setBackground(new Color(43, 39, 56));
+	    etiqueta1.setOpaque(true);
+	    etiqueta1.setHorizontalAlignment(JLabel.CENTER);
+	    Font fuenteTitulo = new Font("Segoe UI", Font.BOLD, 24);
+	    etiqueta1.setFont(fuenteTitulo);
+	    etiqueta1.setForeground(Color.WHITE);
+	    panelPrincipal.add(etiqueta1);
 
-		ButtonGroup terminos = new ButtonGroup();
-		
-		JRadioButton aceptar = new JRadioButton("Acepto los términos",true);
-		aceptar.setBounds(18,300,140,20);
-		panelPrincipal.add(aceptar);
-		
-		JRadioButton aceptar2 = new JRadioButton("No acepto los términos");
-		aceptar2.setBounds(210,300,180,20);
-		panelPrincipal.add(aceptar2);
-		
-		terminos.add(aceptar);
-		terminos.add(aceptar2);
-		
-		String [] colonias = {"Los Olivos", "Miramar", "Santa Fe","Pedregal"};
-		JComboBox colonia = new JComboBox(colonias);
-		colonia.setBounds(18,340,370,30);
-		colonia.setBackground(new Color(255, 255, 255));
-		colonia.setVisible(true);
-		panelPrincipal.add(colonia);
-		
-		JButton acceso = new JButton("Crear cuenta");
-		acceso.setBounds(80, 390, 230, 45);
-		acceso.setHorizontalAlignment(JLabel.CENTER);
-		acceso.setBackground(new Color(15, 62, 234));
-		Font fuente2 = new Font("arial", 40, 20);
-		acceso.setFont(fuente2); 
-		acceso.setForeground(Color.WHITE);
-		panelPrincipal.add(acceso);
-		
-		JButton acceso2 = new JButton("Regresar");
-		acceso2.setBounds(80, 440, 230, 45);
-		acceso2.setHorizontalAlignment(JLabel.CENTER);
-		acceso2.setBackground(new Color(15, 62, 234));
-		Font fuente3 = new Font("arial", 40, 20);
-		acceso2.setFont(fuente3); 
-		acceso2.setForeground(Color.WHITE);
-		panelPrincipal.add(acceso2);
-		panelPrincipal.revalidate();
-		
-		acceso2.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				frame.setSize(380,600);
-				login();		
-			}
-		});
-		
-		acceso.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				boolean valido = true;
+	    JLabel lblNombres = new JLabel("Nombres");
+	    lblNombres.setBounds(40, 80, 150, 20);
+	    lblNombres.setFont(etiquetas);
+	    lblNombres.setForeground(Color.WHITE);
+	    panelPrincipal.add(lblNombres);
+	    
+	    JTextField txtNombres = new JTextField();
+	    txtNombres.setBounds(40, 100, 250, 30);
+	    txtNombres.setBackground(new Color(59, 53, 79));
+	    txtNombres.setFont(etiquetas);
+	    txtNombres.setForeground(Color.WHITE);
+	    panelPrincipal.add(txtNombres);
+	    
+	    JLabel lblApellidos = new JLabel("Apellidos");
+	    lblApellidos.setBounds(40, 140, 150, 20);
+	    lblApellidos.setFont(etiquetas);
+	    lblApellidos.setForeground(Color.WHITE);
+	    panelPrincipal.add(lblApellidos);
+	    
+	    JTextField txtApellidos = new JTextField();
+	    txtApellidos.setBounds(40, 160, 250, 30);
+	    txtApellidos.setBackground(new Color(59, 53, 79));
+	    txtApellidos.setFont(etiquetas);
+	    txtApellidos.setForeground(Color.WHITE);
+	    panelPrincipal.add(txtApellidos);
+	    
+	    JLabel lblEmpresa = new JLabel("Empresa");
+	    lblEmpresa.setBounds(40, 200, 150, 20);
+	    lblEmpresa.setFont(etiquetas);
+	    lblEmpresa.setForeground(Color.WHITE);
+	    panelPrincipal.add(lblEmpresa);
+	    
+	    JTextField txtEmpresa = new JTextField();
+	    txtEmpresa.setBounds(40, 220, 250, 30);
+	    txtEmpresa.setBackground(new Color(59, 53, 79));
+	    txtEmpresa.setFont(etiquetas);
+	    txtEmpresa.setForeground(Color.WHITE);
+	    panelPrincipal.add(txtEmpresa);
 
-				if(email.getText().equals("")) {
-					email.setBorder(BorderFactory.createLineBorder(Color.red));
-					valido = false;
-				} else {
-					email.setBorder(BorderFactory.createLineBorder(Color.green));
-				}
+	    JLabel lblAmbito = new JLabel("Ámbito de la empresa");
+	    lblAmbito.setBounds(40, 260, 200, 20);
+	    lblAmbito.setFont(etiquetas);
+	    lblAmbito.setForeground(Color.WHITE);
+	    panelPrincipal.add(lblAmbito);
+	    
+	    String[] ambitos = {"Tecnología", "Salud", "Educación", "Comercio", "Otro"};
+	    JComboBox cmbAmbito = new JComboBox(ambitos);
+	    cmbAmbito.setBounds(40, 280, 250, 30);
+	    cmbAmbito.setBackground(new Color(59, 53, 79));
+	    cmbAmbito.setForeground(Color.WHITE);
+	    panelPrincipal.add(cmbAmbito);
+	    
+	    JLabel lblCargo = new JLabel("Cargo");
+	    lblCargo.setBounds(350, 80, 150, 20);
+	    lblCargo.setFont(etiquetas);
+	    lblCargo.setForeground(Color.WHITE);
+	    panelPrincipal.add(lblCargo);
+	    
+	    JTextField txtCargo = new JTextField();
+	    txtCargo.setBounds(350, 100, 250, 30);
+	    txtCargo.setBackground(new Color(59, 53, 79));
+	    txtCargo.setFont(etiquetas);
+	    txtCargo.setForeground(Color.WHITE);
+	    panelPrincipal.add(txtCargo);
 
-				if(biografia.getText().equals("")) {
-					biografia.setBorder(BorderFactory.createLineBorder(Color.red));
-					valido = false;
-				} else {
-					biografia.setBorder(BorderFactory.createLineBorder(Color.green));
-				}
+	    JLabel lblUsuario = new JLabel("Nombre de usuario");
+	    lblUsuario.setBounds(350, 140, 200, 20);
+	    lblUsuario.setFont(etiquetas);
+	    lblUsuario.setForeground(Color.WHITE);
+	    panelPrincipal.add(lblUsuario);
+	    
+	    JTextField txtUsuario = new JTextField();
+	    txtUsuario.setBounds(350, 160, 250, 30);
+	    txtUsuario.setBackground(new Color(59, 53, 79));
+	    txtUsuario.setFont(etiquetas);
+	    txtUsuario.setForeground(Color.WHITE);
+	    panelPrincipal.add(txtUsuario);
 
-				if (valido) {
-				    String preferencias = "";
+	    JLabel lblEmail = new JLabel("Correo electrónico");
+	    lblEmail.setBounds(350, 200, 200, 20);
+	    lblEmail.setFont(etiquetas);
+	    lblEmail.setForeground(Color.WHITE);
+	    panelPrincipal.add(lblEmail);
+	    
+	    JTextField txtEmail = new JTextField();
+	    txtEmail.setBounds(350, 220, 250, 30);
+	    txtEmail.setBackground(new Color(59, 53, 79));
+	    txtEmail.setFont(etiquetas);
+	    txtEmail.setForeground(Color.WHITE);
+	    panelPrincipal.add(txtEmail);
 
-				    if (recordar.isSelected()) {
-				        preferencias += "Dulce";
-				    }
+	    JLabel lblPassword = new JLabel("Contraseña");
+	    lblPassword.setBounds(40, 330, 150, 20);
+	    lblPassword.setFont(etiquetas);
+	    lblPassword.setForeground(Color.WHITE);
+	    panelPrincipal.add(lblPassword);
+	    
+	    JPasswordField txtPassword = new JPasswordField();
+	    txtPassword.setBounds(40, 350, 250, 30);
+	    txtPassword.setBackground(new Color(59, 53, 79));
+	    txtPassword.setFont(etiquetas);
+	    panelPrincipal.add(txtPassword);
+	    
+	    JLabel lblPassword2 = new JLabel("Repetir contraseña");
+	    lblPassword2.setBounds(350, 330, 200, 20);
+	    lblPassword2.setFont(etiquetas);
+	    lblPassword2.setForeground(Color.WHITE);
+	    panelPrincipal.add(lblPassword2);
+	    
+	    JPasswordField txtPassword2 = new JPasswordField();
+	    txtPassword2.setBounds(350, 350, 250, 30);
+	    txtPassword2.setBackground(new Color(59, 53, 79));
+	    txtPassword2.setFont(etiquetas);
+	    panelPrincipal.add(txtPassword2);
 
-				    if (salado.isSelected()) {
-				        if (!preferencias.equals("")) {
-				            preferencias += ", ";
-				        }
-				        preferencias += "Salado";
-				    }
+	    JButton btnRegistrar = new JButton("Registrarse");
+	    btnRegistrar.setBounds(180, 410, 150, 35);
+	    btnRegistrar.setHorizontalAlignment(JLabel.CENTER);
+	    btnRegistrar.setBackground(new Color(111, 85, 182));
+	    btnRegistrar.setFont(etiquetas);
+	    btnRegistrar.setForeground(Color.WHITE);
+	    panelPrincipal.add(btnRegistrar);
+	    
+	    JButton btnRegresar = new JButton("Regresar");
+	    btnRegresar.setBounds(350, 410, 150, 35);
+	    btnRegresar.setHorizontalAlignment(JLabel.CENTER);
+	    btnRegresar.setBackground(new Color(59, 53, 79));
+	    btnRegresar.setFont(etiquetas);
+	    btnRegresar.setForeground(Color.WHITE);
+	    panelPrincipal.add(btnRegresar);
+	    
+	    btnRegresar.addActionListener(new ActionListener() {
+	        @Override
+	        public void actionPerformed(ActionEvent e) {
+	            frame.setSize(380, 600);
+	            login();
+	        }
+	    });
+	    
+	    btnRegistrar.addActionListener(new ActionListener() {
+	        @Override
+	        public void actionPerformed(ActionEvent e) {
+	            String nombres = txtNombres.getText();
+	            String apellidos = txtApellidos.getText();
+	            String empresa = txtEmpresa.getText();
+	            String ambito = cmbAmbito.getSelectedItem().toString();
+	            String cargo = txtCargo.getText();
+	            String usuario = txtUsuario.getText();
+	            String password = new String(txtPassword.getPassword());
+	            String password2 = new String(txtPassword2.getPassword());
+	            String email = txtEmail.getText();
 
-				    if (saludable.isSelected()) {
-				        if (!preferencias.equals("")) {
-				            preferencias += ", ";
-				        }
-				        preferencias += "Saludable";
-				    }				    
-				    String coloniaSeleccionada = colonia.getSelectedItem().toString();
-				    boolean acepto = aceptar.isSelected();
+	            boolean hayErrores = false;
+	            String mensajeErrores = "";
 
-				    
-				    if(acepto) {
-				    	AuthModel auth = new AuthModel();
-				    	auth.registro(email.getText(), biografia.getText(), preferencias, coloniaSeleccionada, acepto);
-				    	JOptionPane.showMessageDialog(null, "Registro exitoso", "Registro", JOptionPane.INFORMATION_MESSAGE);
-				    	frame.setSize(380,600);
-				    	login();
-				    }else {
-				    	JOptionPane.showMessageDialog(null, "Registro no exitoso, acepta los terminos", "Registro", JOptionPane.INFORMATION_MESSAGE);
-				    }
-				}
-			}
-		});
+	            if (!nombres.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+	                txtNombres.setBorder(BorderFactory.createLineBorder(Color.RED));
+	                mensajeErrores += "Nombres inválidos.\n";
+	                hayErrores = true;
+	            } else {
+	                txtNombres.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+	            }
 
-		panelPrincipal.repaint();
-		panelPrincipal.revalidate();
+	            if (!apellidos.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+	                txtApellidos.setBorder(BorderFactory.createLineBorder(Color.RED));
+	                mensajeErrores += "Apellidos inválidos.\n";
+	                hayErrores = true;
+	            } else {
+	                txtApellidos.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+	            }
+
+	            if (!empresa.matches("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+")) {
+	                txtEmpresa.setBorder(BorderFactory.createLineBorder(Color.RED));
+	                mensajeErrores += "Empresa inválida.\n";
+	                hayErrores = true;
+	            } else {
+	                txtEmpresa.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+	            }
+
+	            if (!cargo.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+	                txtCargo.setBorder(BorderFactory.createLineBorder(Color.RED));
+	                mensajeErrores += "Cargo inválido.\n";
+	                hayErrores = true;
+	            } else {
+	                txtCargo.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+	            }
+
+	            if (!usuario.matches("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+")) {
+	                txtUsuario.setBorder(BorderFactory.createLineBorder(Color.RED));
+	                mensajeErrores += "Usuario inválido.\n";
+	                hayErrores = true;
+	            } else {
+	                txtUsuario.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+	            }
+
+	            if (password.matches(".*\\s.*")) {
+	                mensajeErrores += "La contraseña no puede contener espacios.\n";
+	                hayErrores = true;
+	            }
+
+	            if (!password.matches(".*[!@#$%^&*()_+=\\-{}\\[\\]:;\"'<>,.?/\\\\|~`].*")) {
+	                mensajeErrores += "La contraseña debe tener al menos un carácter especial.\n";
+	                hayErrores = true;
+	            }
+
+	            if (!password.equals(password2)) {
+	                mensajeErrores += "Las contraseñas no coinciden.\n";
+	                txtPassword.setBorder(BorderFactory.createLineBorder(Color.RED));
+	                txtPassword2.setBorder(BorderFactory.createLineBorder(Color.RED));
+	                hayErrores = true;
+	            }
+	            else {
+	            	txtPassword.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+	                txtPassword2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+	            }
+
+	            if (email.contains(" ")) {
+	                txtEmail.setBorder(BorderFactory.createLineBorder(Color.RED));
+	                mensajeErrores += "El correo electrónico no debe tener espacios.\n";
+	                hayErrores = true;
+	            } else {
+	                txtEmail.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+	            }
+
+	            if (hayErrores) {
+	                JOptionPane.showMessageDialog(null, mensajeErrores, "Errores en el formulario", JOptionPane.ERROR_MESSAGE);
+	                return;
+	            }
+	            
+	            AuthModel auth = new AuthModel();
+	            boolean datosCorrectos = auth.registro(nombres,apellidos,empresa,ambito,cargo,usuario,email,password);
+	            
+	            if(datosCorrectos){
+	            	JOptionPane.showMessageDialog(null,"Registro exitoso","Registro",JOptionPane.INFORMATION_MESSAGE);
+	            	frame.setSize(380,600);
+	            	login();
+	            }
+	            else{
+	            	JOptionPane.showMessageDialog(null,"Error al guardar los datos.","Error",JOptionPane.ERROR_MESSAGE);
+	            }
+	        }
+	    });
+
+	    panelPrincipal.repaint();
+	    panelPrincipal.revalidate();
 	}
 	public void home() {
 		panelPrincipal.removeAll();
@@ -383,15 +464,6 @@ public class AuthView {
 		panelPrincipal.setSize(400, 600);
 		panelPrincipal.setBackground(new Color(235, 235, 235));
 		panelPrincipal.setLayout(null);
-		
-		JLabel etiqueta1 = new JLabel("Home");
-		etiqueta1.setSize(245, 30);
-		etiqueta1.setLocation(70, 20);
-		etiqueta1.setBackground(new Color(235, 235, 235));
-		etiqueta1.setOpaque(true);
-		etiqueta1.setHorizontalAlignment(JLabel.CENTER);
-		etiqueta1.setFont(etiquetas);
-		panelPrincipal.add(etiqueta1);
 		
 		panelPrincipal.repaint();
 		panelPrincipal.revalidate();
