@@ -21,6 +21,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import controllers.HomeController;
 import models.AuthModel;
 
 public class AuthView {
@@ -182,8 +183,8 @@ public class AuthView {
 	                AuthModel auth = new AuthModel(); 
 	                if (auth.access(correo, passText)) {
 	                    JOptionPane.showMessageDialog(null, "Bienvenido", "Inicio de sesión", JOptionPane.INFORMATION_MESSAGE);
-	                    frame.setSize(380,600);
-	    				home();
+	                    frame.dispose(); 
+	                    HomeController c = new HomeController(); 
 	                    
 	                } else {
 	                    JOptionPane.showMessageDialog(null, "Correo o contraseña incorrectos.", "Error", JOptionPane.ERROR_MESSAGE);
