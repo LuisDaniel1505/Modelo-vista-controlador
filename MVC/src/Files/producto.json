@@ -1,0 +1,22 @@
+{
+  "productos": [
+    {
+      "id": 3,
+      "nombre": "Teclado Corsair",
+      "precio": 45.00,
+      "stock": 30
+    },
+    {
+      "id": 4,
+      "nombre": "Monitor Dell",
+      "precio": 150.75,
+      "stock": 20
+    },
+    {
+      "id": 5,
+      "nombre": "Auriculares Sony",
+      "precio": 89.99,
+      "stock": 25
+    }
+  ]
+}

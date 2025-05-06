@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import controllers.productController;
+import controllers.ProductController;
 
 public class HomeView extends JFrame {
 	private JPanel contentPane;
@@ -92,8 +92,8 @@ public class HomeView extends JFrame {
 		lblNewLabel_1_1_2.addMouseListener(new MouseAdapter() {
              @Override
              public void mouseClicked(MouseEvent e) {
-                 productController p = new productController();
-                 p.showProducts();
+            	 ProductController controlador = new ProductController();
+                 controlador.mostrarProductos();
              }
 
          });
