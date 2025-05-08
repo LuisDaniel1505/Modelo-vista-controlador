@@ -18,4 +18,14 @@ public class ProductController {
         List<Product> productos = modelo.obtenerProductos();
         vista.actualizarTabla(productos);
     }
+    
+    public void agregarProducto(int id, String nombre, double precio, int stock) {
+        Product producto = new Product(id, nombre, precio, stock);
+        boolean hecho = modelo.agregarProducto(producto);
+        if (hecho) {
+            mostrarProductos();
+        } else {
+            System.out.println("Error al agregar producto");
+        }
+    }
 }

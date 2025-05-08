@@ -4,6 +4,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,5 +29,31 @@ public class ProductModel {
             e.printStackTrace();
         }
         return productos;
+    }
+    public boolean agregarProducto(Product nuevoProducto) {
+        JSONParser parser = new JSONParser();
+        try {
+            String ruta = getClass().getResource("/files/producto.json").getPath();
+            FileReader reader = new FileReader(ruta);
+            JSONObject raiz = (JSONObject) parser.parse(reader);
+            JSONArray productos = (JSONArray) raiz.get("productos");
+
+            JSONObject nuevo = new JSONObject();
+            nuevo.put("id", nuevoProducto.getId());
+            nuevo.put("nombre", nuevoProducto.getNombre());
+            nuevo.put("precio", nuevoProducto.getPrecio());
+            nuevo.put("stock", nuevoProducto.getStock());
+
+            productos.add(nuevo);
+
+            try (FileWriter writer = new FileWriter(ruta)) {
+                writer.write(raiz.toJSONString());
+                writer.flush();
+            }
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }
