@@ -56,4 +56,31 @@ public class ProductModel {
             return false;
         }
     }
+    public boolean eliminarProducto(int idProducto) {
+        JSONParser parser = new JSONParser();
+        try {
+            String ruta = getClass().getResource("/files/producto.json").getPath();
+            FileReader reader = new FileReader(ruta);
+            JSONObject raiz = (JSONObject) parser.parse(reader);
+            JSONArray productos = (JSONArray) raiz.get("productos");
+
+            for (int i = 0; i < productos.size(); i++) {
+                JSONObject obj = (JSONObject) productos.get(i);
+                if ((int) (long) obj.get("id") == idProducto) {
+                    productos.remove(i);
+                    break;
+                }
+            }
+
+            try (FileWriter writer = new FileWriter(ruta)) {
+                writer.write(raiz.toJSONString());
+                writer.flush();
+            }
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
 }

@@ -92,8 +92,11 @@ public class HomeView extends JFrame {
 		lblNewLabel_1_1_2.addMouseListener(new MouseAdapter() {
              @Override
              public void mouseClicked(MouseEvent e) {
-            	 ProductController controlador = new ProductController();
-                 controlador.mostrarProductos();
+            	 ProductController controller = new ProductController();
+                 ProductView view = new ProductView(controller);               
+                 controller.setVista(view);                                    
+                 controller.mostrarProductos();                                
+                 view.setVisible(true);    
              }
 
          });
