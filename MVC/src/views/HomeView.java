@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import controllers.ProductController;
+import controllers.UserController;
 
 public class HomeView extends JFrame {
 	private JPanel contentPane;
@@ -52,7 +53,8 @@ public class HomeView extends JFrame {
 		lblNewLabel_1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-            	JOptionPane.showMessageDialog(null, "Acaba de entrar a usuarios", "Usuarios", JOptionPane.INFORMATION_MESSAGE);
+            	UserController user = new UserController();
+            	user.mostrarUsuarios();
             }
 
         });
